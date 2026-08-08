@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Joshua Dardashti | Software Engineer</title>
+<meta name="description" content="Portfolio of Joshua Dardashti: data-intensive systems in Python and C++, trading research infrastructure, orbital mechanics, and database performance tooling.">
+<style>
+:root {
+  --bg: #fafaf8;
+  --surface: #ffffff;
+  --text: #1c2128;
+  --muted: #57606a;
+  --accent: #0b5fa5;
+  --border: #d8dee4;
+  --chip-bg: #eef2f6;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1216;
+    --surface: #161b22;
+    --text: #e6edf3;
+    --muted: #9aa4af;
+    --accent: #58a6ff;
+    --border: #30363d;
+    --chip-bg: #21262d;
+  }
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 1.25rem; }
+header.hero { padding: 4.5rem 0 2.5rem; }
+.hero h1 { font-size: 2.2rem; letter-spacing: -0.02em; }
+.hero .role { font-size: 1.15rem; color: var(--accent); font-weight: 600; margin-top: 0.15rem; }
+.hero p.lede { color: var(--muted); max-width: 46rem; margin-top: 0.9rem; }
+.links { margin-top: 1.2rem; display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.links a {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+.links a:hover { border-color: var(--accent); text-decoration: none; }
+section { padding: 1.6rem 0; }
+h2 {
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 1.1rem;
+}
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem 1.25rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+}
+.card h3 { font-size: 1.05rem; margin-bottom: 0.15rem; }
+.card .meta { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.6rem; }
+.card p { font-size: 0.93rem; color: var(--text); flex: 1; }
+.card .foot { margin-top: 0.9rem; display: flex; align-items: center; gap: 0.7rem; flex-wrap: wrap; }
+.badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  background: var(--chip-bg);
+}
+.badge.public { color: var(--accent); border-color: var(--accent); background: transparent; }
+.srclink { font-size: 0.88rem; font-weight: 600; }
+.chips { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.chip {
+  background: var(--chip-bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+.edu {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.1rem 1.25rem;
+}
+.edu .degree { font-weight: 600; }
+.edu .detail { color: var(--muted); font-size: 0.92rem; }
+footer { padding: 2.5rem 0 3rem; color: var(--muted); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1>Joshua Dardashti</h1>
+  <div class="role">Software Engineer</div>
+  <p class="lede">I build data-intensive systems in Python and C++: trading research infrastructure, orbital mechanics engines, event-streaming pipelines, and database performance tooling. Recent graduate of UC Santa Cruz (B.S. Technology and Information Management, 3.9 GPA).</p>
+  <div class="links">
+    <a href="https://github.com/jdardash">GitHub</a>
+    <a href="https://www.linkedin.com/in/joshua-dardashti">LinkedIn</a>
+    <a href="mailto:jsdardashti@gmail.com">Email</a>
+  </div>
+</header>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+
+    <div class="card">
+      <h3>Space-Domain Awareness Collision Predictor</h3>
+      <div class="meta">Python, SGP4, FastAPI, CesiumJS</div>
+      <p>Satellite conjunction analysis engine: SGP4 propagation, two-phase collision screening, and collision probability computed three ways (Foster, Chan, Monte Carlo) with cross-method validation. Generates CCSDS-format conjunction data messages and serves a live 3D catalog globe over FastAPI. Over 200 automated tests.</p>
+      <div class="foot">
+        <span class="badge public">Public</span>
+        <a class="srclink" href="https://github.com/jdardash/space-collision-predictor">View source</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Crossbook</h3>
+      <div class="meta">C++20, market microstructure</div>
+      <p>Multi-venue crypto order book reconstruction in C++20, verified continuously against exchange checksums. Header-only feed handlers rebuild Kraken and Binance L2 books from live streams, with correctness proven on every update rather than assumed.</p>
+      <div class="foot">
+        <span class="badge public">Public</span>
+        <a class="srclink" href="https://github.com/jdardash/crossbook">View source</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Alpha Research Platform</h3>
+      <div class="meta">Python, DuckDB, Polars, Arrow, Parquet, NATS JetStream</div>
+      <p>Systematic trading research platform. Multi-source ingestion (Databento futures, FRED macro, crypto derivatives) lands in a 7.6 GB Parquet data lake partitioned by dataset, schema, and symbol, with per-fetch manifests recording row counts, cost, and provenance. DuckDB SQL runs directly over the lake; an event backbone on NATS JetStream provides durable, idempotent delivery with end-to-end trace context.</p>
+      <div class="foot">
+        <span class="badge">Source private</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Lorentzian Trading Engine</h3>
+      <div class="meta">Python, NumPy, Pandas</div>
+      <p>Signal-generation engine built around a custom Lorentzian distance classifier for market-regime detection, validated with a 400-trade walk-forward benchmark. The vectorized NumPy backtesting core cut simulation runtime from minutes to seconds, making large-scale parameter sweeps practical.</p>
+      <div class="foot">
+        <span class="badge">Source private</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>SQL Server Plan Lab</h3>
+      <div class="meta">SQL Server, T-SQL, Python</div>
+      <p>Five SQL Server performance pathologies (implicit conversion, non-sargable predicates, parameter sniffing, missing covering index, key-lookup tipping point), each reproduced with one command against a seeded multi-million-row database. Every number is regenerated by CI: if a pathology stops reproducing, the build fails rather than publishing a stale claim.</p>
+      <div class="foot">
+        <span class="badge public">Public</span>
+        <a class="srclink" href="https://github.com/jdardash/sqlserver-plan-lab">View source</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Alien Escape</h3>
+      <div class="meta">JavaScript, Phaser 3</div>
+      <p>The 1981 Galaga arcade rules rebuilt as pure, unit-tested ES modules behind a thin Phaser 3 rendering layer. Game logic is fully separated from the engine, so every behavior is testable headlessly. An unofficial fan tribute.</p>
+      <div class="foot">
+        <span class="badge public">Public</span>
+        <a class="srclink" href="https://github.com/jdardash/alien-escape">View source</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="chips">
+    <span class="chip">Python</span>
+    <span class="chip">C++20</span>
+    <span class="chip">SQL</span>
+    <span class="chip">JavaScript</span>
+    <span class="chip">DuckDB</span>
+    <span class="chip">Polars</span>
+    <span class="chip">Apache Arrow</span>
+    <span class="chip">Parquet</span>
+    <span class="chip">NATS JetStream</span>
+    <span class="chip">FastAPI</span>
+    <span class="chip">NumPy / Pandas</span>
+    <span class="chip">SQL Server</span>
+    <span class="chip">SQLite</span>
+    <span class="chip">pytest</span>
+    <span class="chip">Git / CI</span>
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="edu">
+    <div class="degree">University of California, Santa Cruz</div>
+    <div class="detail">B.S. Technology and Information Management, June 2026. GPA 3.9.</div>
+  </div>
+</section>
+
+<footer>
+  Joshua Dardashti. Plain HTML, no trackers. Source at <a href="https://github.com/jdardash/jdardash.github.io">jdardash/jdardash.github.io</a>.
+</footer>
+
+</div>
+</body>
+</html>
