@@ -4,10 +4,45 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Joshua Dardashti | Software Engineer</title>
-<meta name="description" content="Portfolio of Joshua Dardashti: data-intensive systems in Python and C++, trading research infrastructure, orbital mechanics, and database performance tooling.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<meta name="description" content="Joshua Dardashti is a software engineer building data-intensive systems in Python and C++: trading research infrastructure, orbital mechanics engines, and database performance tooling. UC Santa Cruz, 2026.">
+<link rel="canonical" href="https://jdardash.github.io/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Joshua Dardashti | Software Engineer">
+<meta property="og:description" content="Data-intensive systems in Python and C++: trading research infrastructure, orbital mechanics engines, and database performance tooling.">
+<meta property="og:url" content="https://jdardash.github.io/">
+<meta property="og:site_name" content="Joshua Dardashti">
+<meta property="og:image" content="https://jdardash.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Joshua Dardashti, software engineer. Data-intensive systems in Python and C++.">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "dateModified": "2026-08-07",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Joshua Dardashti",
+    "alternateName": "jdardash",
+    "url": "https://jdardash.github.io/",
+    "image": "https://jdardash.github.io/og.png",
+    "jobTitle": "Software Engineer",
+    "knowsAbout": ["Python", "C++", "SQL", "data engineering", "market data systems", "orbital mechanics"],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of California, Santa Cruz"
+    },
+    "sameAs": [
+      "https://github.com/jdardash",
+      "https://www.linkedin.com/in/joshua-dardashti"
+    ]
+  }
+}
+</script>
 <style>
 :root {
   --bg: #fbfaf8;
@@ -15,7 +50,7 @@
   --surface-2: #f4f2ee;
   --text: #191c22;
   --muted: #5c6470;
-  --faint: #8a919c;
+  --faint: #667080;
   --accent: #1a56db;
   --accent-ink: #1a56db;
   --border: #e3e1dc;
@@ -30,7 +65,7 @@
     --surface-2: #1b222c;
     --text: #e6edf3;
     --muted: #9aa4b2;
-    --faint: #6e7893;
+    --faint: #8a94a6;
     --accent: #6ea8fe;
     --accent-ink: #8ab8ff;
     --border: #262d38;
@@ -41,18 +76,34 @@
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 a { color: var(--accent-ink); text-decoration: none; }
-.mono { font-family: "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, monospace; }
+a:focus-visible, .btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.mono { font-family: ui-monospace, "Cascadia Code", "SF Mono", Consolas, monospace; }
 .wrap { max-width: 1040px; margin: 0 auto; padding: 0 1.5rem; }
+.skip-link {
+  position: absolute; left: -999px; top: 0; z-index: 20;
+  background: var(--accent); color: #fff;
+  padding: 0.6rem 1rem; border-radius: 0 0 8px 0;
+  font-weight: 600;
+}
+.skip-link:focus { left: 0; }
 
 /* Nav */
 nav {
@@ -72,28 +123,32 @@ nav {
   transition: color 0.15s ease;
 }
 .nav-links a:hover { color: var(--text); }
-.nav-links a.cta {
-  color: var(--accent-ink); font-weight: 600;
-}
+.nav-links a.cta { color: var(--accent-ink); font-weight: 600; }
 @media (max-width: 640px) { .nav-links a.hide-sm { display: none; } }
 
 /* Hero */
-.hero { padding: 6.5rem 0 5rem; }
+.hero { padding: 5.5rem 0 4.5rem; }
 .eyebrow {
-  font-family: "JetBrains Mono", monospace;
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
   font-size: 0.78rem; font-weight: 500; letter-spacing: 0.14em;
   text-transform: uppercase; color: var(--accent-ink);
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.2rem;
 }
 .hero h1 {
-  font-size: clamp(2.1rem, 5.5vw, 3.4rem);
-  font-weight: 800; letter-spacing: -0.03em; line-height: 1.12;
-  max-width: 46rem;
+  font-size: clamp(2.3rem, 6vw, 3.6rem);
+  font-weight: 800; letter-spacing: -0.03em; line-height: 1.1;
 }
-.hero h1 .dim { color: var(--faint); }
+.hero .tagline {
+  margin-top: 0.9rem;
+  font-size: clamp(1.15rem, 2.6vw, 1.5rem);
+  font-weight: 600; letter-spacing: -0.015em;
+  color: var(--text);
+  max-width: 42rem;
+}
+.hero .tagline .dim { color: var(--faint); font-weight: 500; }
 .hero .lede {
-  margin-top: 1.5rem; max-width: 40rem;
-  font-size: 1.08rem; color: var(--muted);
+  margin-top: 1.2rem; max-width: 42rem;
+  font-size: 1.05rem; color: var(--muted);
 }
 .hero-actions { margin-top: 2.2rem; display: flex; gap: 0.8rem; flex-wrap: wrap; }
 .btn {
@@ -116,10 +171,6 @@ section { padding: 3.2rem 0; }
   font-size: 1.45rem; font-weight: 700; letter-spacing: -0.02em; white-space: nowrap;
 }
 .section-head .rule { flex: 1; height: 1px; background: var(--border); }
-.section-head .count {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.78rem; color: var(--faint);
-}
 
 /* Cards */
 .card {
@@ -145,6 +196,10 @@ a.card-link:hover .card, .card.hoverable:hover {
 .proj-top { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.7rem; flex-wrap: wrap; }
 .proj-top h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.015em; }
 .featured p.desc { color: var(--muted); font-size: 0.98rem; }
+.why {
+  margin-top: 0.9rem; font-size: 0.92rem; color: var(--text);
+}
+.why strong { font-weight: 600; }
 .fact-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
 .fact-list li {
   display: flex; gap: 0.7rem; align-items: baseline;
@@ -152,7 +207,7 @@ a.card-link:hover .card, .card.hoverable:hover {
   padding-bottom: 0.65rem; border-bottom: 1px solid var(--border);
 }
 .fact-list li:last-child { border-bottom: none; padding-bottom: 0; }
-.fact-list .tick { color: var(--accent-ink); font-weight: 700; font-family: "JetBrains Mono", monospace; font-size: 0.8rem; }
+.fact-list .tick { color: var(--accent-ink); font-weight: 700; font-family: ui-monospace, Consolas, monospace; font-size: 0.8rem; }
 
 /* Project grid */
 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
@@ -160,8 +215,10 @@ a.card-link:hover .card, .card.hoverable:hover {
 .grid .card { padding: 1.5rem 1.5rem 1.35rem; }
 .grid h3 { font-size: 1.08rem; font-weight: 700; letter-spacing: -0.01em; }
 .grid p.desc { color: var(--muted); font-size: 0.92rem; margin-top: 0.55rem; flex: 1; }
+.grid .fact-list { margin-top: 1rem; gap: 0.5rem; }
+.grid .fact-list li { font-size: 0.88rem; padding-bottom: 0.5rem; }
 .badge {
-  font-family: "JetBrains Mono", monospace;
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
   font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em;
   padding: 0.18rem 0.6rem; border-radius: 999px;
   text-transform: uppercase;
@@ -170,7 +227,7 @@ a.card-link:hover .card, .card.hoverable:hover {
 .badge.private { color: var(--muted); border: 1px solid var(--border-strong); background: var(--surface-2); }
 .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.1rem; }
 .tag {
-  font-family: "JetBrains Mono", monospace;
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
   font-size: 0.72rem; color: var(--muted);
   background: var(--surface-2);
   border: 1px solid var(--border);
@@ -180,12 +237,19 @@ a.card-link:hover .card, .card.hoverable:hover {
 .srclink { font-size: 0.86rem; font-weight: 600; }
 .srclink::after { content: " \2192"; }
 
+/* Compact rows for secondary projects */
+.rows { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1.2rem; }
+.row-card { padding: 1.1rem 1.5rem; flex-direction: row; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+.row-card h3 { font-size: 1rem; font-weight: 700; white-space: nowrap; }
+.row-card p { color: var(--muted); font-size: 0.9rem; flex: 1; min-width: 16rem; }
+.row-card .srclink { white-space: nowrap; }
+
 /* Skills */
 .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
 @media (max-width: 780px) { .skills-grid { grid-template-columns: 1fr; } }
 .skill-col { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem 1.5rem; box-shadow: var(--shadow); }
 .skill-col h3 {
-  font-family: "JetBrains Mono", monospace;
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
   font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em;
   text-transform: uppercase; color: var(--faint);
   margin-bottom: 0.9rem;
@@ -202,7 +266,7 @@ a.card-link:hover .card, .card.hoverable:hover {
 .edu-card .degree { font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em; }
 .edu-card .detail { color: var(--muted); font-size: 0.92rem; margin-top: 0.15rem; }
 .edu-card .gpa {
-  font-family: "JetBrains Mono", monospace;
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
   font-size: 0.85rem; font-weight: 600; color: var(--accent-ink);
   border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
   background: color-mix(in srgb, var(--accent) 7%, transparent);
@@ -212,21 +276,23 @@ a.card-link:hover .card, .card.hoverable:hover {
 /* Contact + footer */
 .contact { text-align: center; padding: 4.5rem 0 4rem; }
 .contact h2 { font-size: 1.7rem; font-weight: 800; letter-spacing: -0.02em; }
-.contact p { color: var(--muted); margin-top: 0.7rem; max-width: 32rem; margin-inline: auto; }
+.contact p { color: var(--muted); margin-top: 0.7rem; max-width: 34rem; margin-inline: auto; }
 .contact .hero-actions { justify-content: center; }
 footer {
   border-top: 1px solid var(--border);
   padding: 1.8rem 0 2.2rem;
   color: var(--faint); font-size: 0.83rem;
-  display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
 }
+footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 footer a { color: var(--muted); }
 footer a:hover { color: var(--text); }
 </style>
 </head>
 <body>
 
-<nav>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav aria-label="Site">
   <div class="wrap nav-inner">
     <span class="nav-name">Joshua Dardashti</span>
     <div class="nav-links">
@@ -239,11 +305,14 @@ footer a:hover { color: var(--text); }
   </div>
 </nav>
 
+<main id="main">
+
 <header class="hero">
   <div class="wrap">
     <div class="eyebrow">Software Engineer</div>
-    <h1>I build data-intensive systems <span class="dim">in Python and C++.</span></h1>
-    <p class="lede">Trading research infrastructure, orbital mechanics engines, event-streaming pipelines, and database performance tooling. B.S. Technology and Information Management, UC Santa Cruz, June 2026.</p>
+    <h1>Joshua Dardashti</h1>
+    <p class="tagline">I build data-intensive systems <span class="dim">in Python and C++.</span></p>
+    <p class="lede">Trading research infrastructure, orbital mechanics engines, event-streaming pipelines, and database performance tooling. B.S. Technology and Information Management, UC Santa Cruz, June 2026. Open to backend, data, and infrastructure engineering roles.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="https://github.com/jdardash">View GitHub</a>
       <a class="btn btn-ghost" href="mailto:jsdardashti@gmail.com">Get in touch</a>
@@ -256,7 +325,6 @@ footer a:hover { color: var(--text); }
     <div class="section-head">
       <h2>Selected work</h2>
       <div class="rule"></div>
-      <span class="count">05</span>
     </div>
 
     <div class="card hoverable featured">
@@ -266,7 +334,7 @@ footer a:hover { color: var(--text); }
             <h3>Space-Domain Awareness Collision Predictor</h3>
             <span class="badge public">Public</span>
           </div>
-          <p class="desc">Satellite conjunction analysis engine. SGP4 propagation feeds a two-phase collision screen, and collision probability is computed three independent ways with cross-method validation before a result is trusted. Generates CCSDS-format conjunction data messages and serves a live 3D catalog globe over FastAPI.</p>
+          <p class="desc">Satellite conjunction analysis engine. A single collision-probability estimate is easy to get wrong and hard to notice when it is, so this engine computes probability three independent ways, Foster, Chan, and Monte Carlo, and cross-validates them before a result is trusted. SGP4 propagation feeds a two-phase screen, results ship as CCSDS-format conjunction data messages, and a live 3D catalog globe is served over FastAPI.</p>
           <div class="tags">
             <span class="tag">Python</span><span class="tag">SGP4</span><span class="tag">FastAPI</span><span class="tag">CesiumJS</span>
           </div>
@@ -276,7 +344,7 @@ footer a:hover { color: var(--text); }
         </div>
         <ul class="fact-list">
           <li><span class="tick">+</span>Over 200 automated tests</li>
-          <li><span class="tick">+</span>Foster, Chan, and Monte Carlo probability, cross-validated</li>
+          <li><span class="tick">+</span>Three probability methods, cross-validated</li>
           <li><span class="tick">+</span>CCSDS conjunction data message generation</li>
           <li><span class="tick">+</span>Live 3D satellite catalog globe</li>
           <li><span class="tick">+</span>Maneuver planning and screening thresholds</li>
@@ -291,7 +359,11 @@ footer a:hover { color: var(--text); }
           <h3>Crossbook</h3>
           <span class="badge public">Public</span>
         </div>
-        <p class="desc">Multi-venue crypto order book reconstruction in C++20, verified continuously against exchange checksums. Header-only feed handlers rebuild Kraken and Binance L2 books from live streams, with correctness proven on every update rather than assumed.</p>
+        <p class="desc">Multi-venue crypto order book reconstruction in C++20. Order book code usually assumes it is correct; Crossbook proves it, verifying the rebuilt Kraken and Binance L2 books against exchange checksums on every update from the live streams.</p>
+        <ul class="fact-list">
+          <li><span class="tick">+</span>Checksum-verified on every book update</li>
+          <li><span class="tick">+</span>Header-only feed handlers, two venues</li>
+        </ul>
         <div class="tags">
           <span class="tag">C++20</span><span class="tag">Market data</span><span class="tag">Low latency</span>
         </div>
@@ -304,33 +376,31 @@ footer a:hover { color: var(--text); }
           <span class="badge private">Source private</span>
         </div>
         <p class="desc">Systematic trading research platform. Multi-source ingestion lands futures, macro, and derivatives data in a 7.6 GB Parquet lake partitioned by dataset, schema, and symbol, with per-fetch manifests recording row counts, cost, and provenance. DuckDB SQL runs directly over the lake; a NATS JetStream event backbone provides durable, idempotent delivery with end-to-end trace context.</p>
+        <ul class="fact-list">
+          <li><span class="tick">+</span>7.6 GB partitioned Parquet lake with provenance manifests</li>
+          <li><span class="tick">+</span>Vectorized backtests cut from minutes to seconds</li>
+        </ul>
         <div class="tags">
           <span class="tag">Python</span><span class="tag">DuckDB</span><span class="tag">Polars</span><span class="tag">Arrow</span><span class="tag">Parquet</span><span class="tag">NATS</span>
         </div>
       </div>
 
-      <a class="card-link" href="https://github.com/jdardash/sqlserver-plan-lab"><div class="card">
-        <div class="proj-top">
-          <h3>SQL Server Plan Lab</h3>
-          <span class="badge public">Public</span>
-        </div>
-        <p class="desc">Five SQL Server performance pathologies, each reproduced with one command against a seeded multi-million-row database, with execution plans captured before and after. Every number is regenerated by CI: if a pathology stops reproducing, the build fails rather than publishing a stale claim.</p>
-        <div class="tags">
-          <span class="tag">SQL Server</span><span class="tag">T-SQL</span><span class="tag">Docker</span><span class="tag">Python</span>
-        </div>
-        <div class="card-foot"><span class="srclink">View source</span></div>
+    </div>
+
+    <div class="rows">
+
+      <a class="card-link" href="https://github.com/jdardash/sqlserver-plan-lab"><div class="card row-card">
+        <h3>SQL Server Plan Lab</h3>
+        <span class="badge public">Public</span>
+        <p>Five SQL Server performance pathologies, each reproduced with one command against a seeded multi-million-row database. Every published number is regenerated by CI: if a pathology stops reproducing, the build fails.</p>
+        <span class="srclink">View source</span>
       </div></a>
 
-      <a class="card-link" href="https://github.com/jdardash/alien-escape"><div class="card">
-        <div class="proj-top">
-          <h3>Alien Escape</h3>
-          <span class="badge public">Public</span>
-        </div>
-        <p class="desc">The 1981 Galaga arcade rules rebuilt as pure, unit-tested ES modules behind a thin Phaser 3 rendering layer. Game logic is fully separated from the engine, so every behavior is testable headlessly. An unofficial fan tribute.</p>
-        <div class="tags">
-          <span class="tag">JavaScript</span><span class="tag">Phaser 3</span><span class="tag">ES modules</span>
-        </div>
-        <div class="card-foot"><span class="srclink">View source</span></div>
+      <a class="card-link" href="https://github.com/jdardash/alien-escape"><div class="card row-card">
+        <h3>Alien Escape</h3>
+        <span class="badge public">Public</span>
+        <p>The 1981 Galaga arcade rules rebuilt as pure, unit-tested ES modules behind a thin Phaser 3 rendering layer, so every behavior is testable headlessly. An unofficial fan tribute.</p>
+        <span class="srclink">View source</span>
       </div></a>
 
     </div>
@@ -397,7 +467,7 @@ footer a:hover { color: var(--text); }
 <section class="contact" id="contact">
   <div class="wrap">
     <h2>Let's talk.</h2>
-    <p>Open to software, data, and infrastructure engineering roles. The fastest way to reach me is email; I typically reply within a day.</p>
+    <p>Open to backend, data, and infrastructure engineering roles. The fastest way to reach me is email; I typically reply within a day.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="mailto:jsdardashti@gmail.com">jsdardashti@gmail.com</a>
       <a class="btn btn-ghost" href="https://www.linkedin.com/in/joshua-dardashti">LinkedIn</a>
@@ -405,10 +475,12 @@ footer a:hover { color: var(--text); }
   </div>
 </section>
 
+</main>
+
 <footer>
-  <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem; padding:0;">
-    <span>Joshua Dardashti</span>
-    <span>Hand-built, no frameworks, no analytics. <a href="https://github.com/jdardash/jdardash.github.io">Source</a></span>
+  <div class="wrap">
+    <span>Joshua Dardashti · <a href="mailto:jsdardashti@gmail.com">jsdardashti@gmail.com</a></span>
+    <span>Hand-built, no frameworks, no analytics, no external requests. <a href="https://github.com/jdardash/jdardash.github.io">Source</a></span>
   </div>
 </footer>
 
